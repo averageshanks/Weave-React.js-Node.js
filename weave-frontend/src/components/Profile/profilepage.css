@@ -1,0 +1,26 @@
+
+.heatmap-language-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px;
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 10px 0;
+}
+
+.heatmap-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 10px 1em 0;
+
+}
+
+.language-container{
+  padding: 2%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  
+}

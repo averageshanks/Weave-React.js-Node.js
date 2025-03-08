@@ -1,0 +1,46 @@
+/* Modal-specific styles */
+
+.modal-title {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .modal-label {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+  
+  .modal-input {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+  }
+  
+  .modal-upload-btn {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .modal-save-btn {
+    display: block;
+    margin: 20px auto 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    padding: 5px 20px;
+  }
+  
+  .ant-modal-body {
+    padding: 32px;
+  }
+  
+  .custom-modal .ant-modal-content {
+    width: 450px;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+  

@@ -1,0 +1,218 @@
+.board_main{
+    flex-grow: 1;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow:hidden;
+    width: 100%;
+    /* margin-right: 0px; */
+}
+
+
+/* Container for the Kanban board */
+.kanban_main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* This will center the grid horizontally */
+    /* align-items: center; */
+    padding:1rem 0rem 1rem 0rem 3%;
+    margin-top: 2rem;
+    margin-left: 0rem;
+    height: 85%;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+/* Individual Kanban grid container (To Do, Doing, Done) */
+.kanban_grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; /* Make sure each grid takes up full width of its container */
+    /* background-color: #f9f9f9; */
+    border-radius: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    
+    /*border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* Subtle shadow for a modern look
+*/
+    }
+
+/* Header of each grid section */
+.kanban_grid_header {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* border-bottom: 2px solid #ddd; */
+}
+
+/* Task containers inside each grid */
+.kanban_grid_tasks {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+    /* align-items: center; */
+    padding: 0.5rem;
+    /* justify-content: flex-start; */
+    overflow-y: auto;
+    gap: 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    height: 100%;
+    max-height: 100%; /* Allow scrolling within each grid */
+    min-width: 90%;
+    width: 100%; /* Ensure task list fills the grid */
+
+}
+
+/* For grid headers color
+.kanban_grid_header.todo {
+    background-color: #FFCDD2;
+}
+
+.kanban_grid_header.doing {
+    background-color: #FFF9C4;
+}
+
+.kanban_grid_header.done {
+    background-color: #C8E6C9;
+} */
+
+
+.kanban_task_list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; /* Increased padding for spacious layout */
+    gap: 0.8rem; /* Add spacing between sections */
+    width: 88%; /* Slightly adjust width to center */
+    height: fit-content;
+    max-width: 400px; /* Set a max width for consistent layout */
+    background-color: white;
+    border-radius: 15px;
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+     /* Subtle shadow for modern look */
+    font-family: 'Arial', sans-serif; /* Ensure clean font family */
+    box-sizing: border-box;
+}
+
+.kanban_task_title {
+    font-size: 1.2rem; /* Emphasize title with larger size */
+    font-weight: 600; /* Bold for importance */
+    color: #333;
+    text-align: left;
+    padding: 0rem 0;
+}
+
+.kanban_task_description {
+    font-size: 0.9rem; /* Slightly smaller than the title */
+    font-weight: 400; /* Normal weight for readability */
+    color: #555;
+    line-height: 1.5; /* Consistent line spacing */
+    text-align: left;
+    word-wrap: break-word; /* Ensure no overflow */
+    padding: 0.1rem 0;
+}
+
+.kanban_task_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.1rem 0.1rem;
+    /* gap: 0.5rem; */
+    font-size: 0.85rem; /* Slightly smaller for secondary info */
+    color: #666;
+}
+
+.kanban_task_assigned {
+    height: 1.5rem;
+    /* cursor: pointer; */
+    padding: 0.1rem 0.4rem;
+    border-radius: 1rem;
+    background-color: #f3f3f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.kanban_task_deadline {
+    text-align: right;
+    font-weight: 500; /* Highlight deadline slightly */
+}
+
+.kanban_task_assigned img{
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+}
+
+.kanban_task_assigned .name{
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+
+.kanban_task_tags {
+    padding: 0.1rem 0.1rem;
+    font-size: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.2rem; /* Adjust spacing between tags */
+    /* margin-top: 0.5rem; */
+}
+
+
+
+.kanban_task_tag_ind {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    /* padding: 5px 15px; */
+    border-radius: 20px;
+    /* background: linear-gradient(to right, #ce42e7, #d63df0); */
+    background: linear-gradient(to right, #b3b3b3, #c6c6c6);
+    color: white;
+    font-size: 0.8rem; /* Subtle and smaller tag text */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* .kanban_task_tag_ind::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fca5ff;
+    margin-right: 5px;
+} */
+
+
+/* Colors for the status tags */
+.kanban_task_tag_created {
+    color: white;
+    background: linear-gradient(to right, #42a5f5, #64b5f6); /* Blue gradient for "created" */
+}
+
+.kanban_task_tag_progress {
+    color:white;
+    background: linear-gradient(to right, #ffa726, #ffb74d); /* Orange gradient for "progress" */
+}
+
+.kanban_task_tag_completed {
+    color:white;
+    background: linear-gradient(to right, #66bb6a, #81c784); /* Green gradient for "completed" */
+}
+
+.kanban_task_tag_missing {
+    color:white;
+    background: linear-gradient(to right, #ff6347, #ff8c69);
+  
+}
+

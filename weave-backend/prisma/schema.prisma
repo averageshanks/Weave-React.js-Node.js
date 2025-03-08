@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  organizationId String @id @default(uuid())
+  name           String
+  location       Json
+  contactMail    String @unique
+  mailSuffix     String @unique
+}
+
+model User {
+  userId         String         @id @default(uuid())
+  name           String
+  email          String         @unique
+  password       String
+  accountType    Role           @default(User)
+  memberProject  Project[]      @relation("member")
+  File           File[]
+  Task           Task[]
+  Message        Message[]
+  pinnedProjects Project[]
+  Notification   Notification[]
+}
+
+model Project {
+  projectId         String    @id @default(uuid())
+  projectTitle      String
+  visibility        String    @default("private")
+  github_link       String?
+  deadline          DateTime
+  organization      String?
+  tags              String
+  description       String?
+  projectSupervisor String?
+  upcomingmeeting   DateTime?
+  members           User[]    @relation("member")
+  File              File[]
+  Task              Task[]
+  Message           Message[]
+  pinnedBy          User[]
+}
+
+model File {
+  fileId      String   @id @default(uuid())
+  fileName    String
+  fileCreated DateTime @default(now())
+  filePath    String
+  fileType    String
+  fileSize    Int
+  fileTag     String?
+  uploadedBy  User     @relation(fields: [authorId], references: [userId])
+  project     Project  @relation(fields: [projectId], references: [projectId])
+  authorId    String
+  projectId   String
+}
+
+model Task {
+  taskId    String   @id @default(uuid())
+  title     String
+  deadline  DateTime @default(dbgenerated("NOW() + interval '7 day'"))
+  name      User     @relation(fields: [userid], references: [userId])
+  status    String   @default("created")
+  info      String
+  project   Project  @relation(fields: [projectId], references: [projectId])
+  projectId String
+  userid    String
+}
+
+model Message {
+  messageId     String   @id @default(uuid())
+  author        User     @relation(fields: [userId], references: [userId])
+  project       Project  @relation(fields: [projectId], references: [projectId])
+  text          String
+  timeofdeliver DateTime @default(now())
+  userId        String
+  projectId     String
+}
+
+model Notification {
+  notificationID String   @id @default(uuid())
+  description    String
+  timeOfDeliver  DateTime @default(now())
+  status         String   @default("unread")
+  user           User     @relation(fields: [userId], references: [userId])
+  userId         String
+}
+
+enum Role {
+  User
+  Supervisor
+  Organization
+}
