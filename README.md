@@ -1,5 +1,5 @@
 
-# <img src="Images/weave_logo_white.png" alt="Weave Logo" width="45" align="bottom"> **Weave React NodeJS**
+# **Weave-React-NodeJS**
 ![License](https://img.shields.io/badge/License-MIT-blue)  
 ![Technologies](https://img.shields.io/badge/Technologies-React%20%7C%20Node.js%20%7C%20PostgreSQL-green)  
 ![Azure](https://img.shields.io/badge/Hosted%20On-Azure-blueviolet)  
